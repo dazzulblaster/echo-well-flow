@@ -1,12 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
+import SessionDashboard from "@/components/SessionDashboard";
+import MilestoneTracker from "@/components/MilestoneTracker";
+import ReportsSection from "@/components/ReportsSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <main>
+        <HeroSection />
+        <SessionDashboard />
+        <MilestoneTracker />
+        <ReportsSection />
+      </main>
+      
+      {/* Footer */}
+      <footer className="py-12 px-4 bg-card border-t border-border">
+        <div className="container mx-auto text-center">
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">MindfulAI</h3>
+            <p className="text-muted-foreground">Your AI-powered journey to mental wellness</p>
+          </div>
+          <div className="flex justify-center gap-8 text-sm text-muted-foreground">
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-primary transition-colors">Support</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
