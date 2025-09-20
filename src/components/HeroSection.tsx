@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Heart, MessageCircle, TrendingUp, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-counseling.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="pt-24 pb-16 px-4">
       <div className="container mx-auto">
@@ -26,7 +29,12 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="xl" className="animate-glow">
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="animate-glow"
+                onClick={() => navigate("/session")}
+              >
                 Start Your First Session
               </Button>
               <Button variant="therapeutic" size="xl">
