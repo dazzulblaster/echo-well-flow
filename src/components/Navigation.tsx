@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Brain, Menu, X } from "lucide-react";
+import { Brain, Menu, X, User } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
@@ -31,6 +33,15 @@ const Navigation = () => {
             <a href="#reports" className="text-foreground hover:text-primary transition-colors">
               Reports
             </a>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("/profile")}
+              className="flex items-center gap-2"
+            >
+              <User className="h-4 w-4" />
+              Profile
+            </Button>
             <Button variant="therapeutic">Get Started</Button>
           </div>
 
@@ -56,6 +67,14 @@ const Navigation = () => {
               <a href="#reports" className="text-foreground hover:text-primary transition-colors">
                 Reports
               </a>
+              <Button
+                variant="ghost"
+                onClick={() => navigate("/profile")}
+                className="justify-start"
+              >
+                <User className="h-4 w-4 mr-2" />
+                Profile
+              </Button>
               <Button variant="therapeutic" className="w-full">
                 Get Started
               </Button>
